@@ -16,11 +16,19 @@ const requiredFields = [
 
 export const ExerciseList = (req,res) => {
     const filter = {
-       
+
     }
     Exercise.find(filter).then(result => {
-        res.status(200).send(result)
+        res.status(200).send({
+            status : 200,
+            data : result,
+            message : 'success'
+        })
     }).catch(error => {
-        res.status(500).send(`Error ${error}`)
+        res.status(500).send({
+            status : 200,
+            data : error,
+            message : 'Error'
+        })
     })
 }

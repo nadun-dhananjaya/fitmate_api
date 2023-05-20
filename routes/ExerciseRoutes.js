@@ -4,6 +4,6 @@ import {ExerciseList} from "../controllers/ExerciseController.js";
 
 const ExerciseRoutes = express.Router()
 
-ExerciseRoutes.post('/list', ExerciseList)
+ExerciseRoutes.get('/list', ExerciseList)
 
 export default ExerciseRoutes

@@ -17,9 +17,9 @@ export const createUser = (req, res) => {
         });
 
         user.save().then(result => {
-            res.send(`${result} is successfully created !`)
+            res.json(`${result} is successfully created !`)
         }).catch(error => {
-            res.send(`${error}`)
+            res.json(`${error}`)
         })
     }
 }

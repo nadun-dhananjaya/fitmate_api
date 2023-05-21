@@ -11,14 +11,16 @@ const UserSchema = new SCHEMA({
         type: String,
         require: true
     },
-    schedule : {
-        type : [],
-        require: false
+    totalDays : {
+        type :Number,
+        require: false,
+        default: 30
     },
-    progress : {
-        type : [],
-        require: false
-    }
+    completedDays : {
+        type :Number,
+        require: false,
+        default: 0
+    },
 })
 
 export default mongoose.model('user', UserSchema)

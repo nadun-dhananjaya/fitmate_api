@@ -2,6 +2,7 @@ import express from "express"
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import ExerciseRoutes from "./routes/ExerciseRoutes.js";
+import UserRoutes from "./routes/UserRoutes.js";
 
 const app = express()
 app.use(bodyParser.urlencoded({extended: false}))
@@ -22,6 +23,8 @@ app.use((req, res, next) => {
 });
 
 app.use('/exercise', ExerciseRoutes)
+
+app.use('/user',UserRoutes)
 
 mongoose.connect("mongodb+srv://knadundhananjaya98:j1LRw2LrV2cHwzqx@cluster0.q0mrgoe.mongodb.net/?retryWrites=true&w=majority").then(result => {
     app.listen(8080);

@@ -13,7 +13,11 @@ const UserSchema = new SCHEMA({
     },
     schedule : {
         type : [],
-        require: true
+        require: false
+    },
+    progress : {
+        type : [],
+        require: false
     }
 })
 

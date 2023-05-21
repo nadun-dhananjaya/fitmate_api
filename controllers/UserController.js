@@ -17,9 +17,19 @@ export const createUser = (req, res) => {
         });
 
         user.save().then(result => {
-            res.json(`${result} is successfully created !`)
+            res.status(200).json({
+                status: 200,
+                message: 'Login successful',
+                data : result
+            });
         }).catch(error => {
-            res.json(`${error}`)
+            res.status(500).json(
+                {
+                    status: 500,
+                    message: 'Server Error',
+                    data : null
+                }
+            );
         })
     }
 }
